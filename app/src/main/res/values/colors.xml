@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="bgColor">#191926</color>
+    <color name="actorTextColor">#D8D8D8</color>
+    <color name="reviewTextColor">#6D6D80</color>
+    <color name="janreColor">#FF3466</color>
+    <color name="textColor">#ECECEC</color>
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
