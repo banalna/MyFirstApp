@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">My First Application</string>
+    <string name="about_film">
+        After the devastating events of Avengers: Infinity War,
+        the universe is in ruins. With the help of remaining allies,
+        the Avengers assemble once more in order to reverse Thanos\'
+        actions and restore balance to the universe.
+    </string>
+    <string name="story_line">Storyline</string>
+    <string name="reviews">125 REVIEWS</string>
+    <string name="janre">Action, Adventure, Fantasy</string>
+    <string name="film_name">Avengers: End Game</string>
+    <string name="pg">13+</string>
+    <string name="back_btn">Back</string>
+    <string name="bg_description">bg image Avengers</string>
+    <string name="cast">Cast</string>
+
+    <string name="actor1">Robert Downey Jr.</string>
+    <string name="actor2">Chris Evans</string>
+    <string name="actor3">Mark Ruffalo</string>
+    <string name="actor4">Chris Hemsworth</string>
+
+
+    <string name="actor_photo">ator\'s photo</string>
+    <string name="star_description">rating star icon</string>
 </resources>
