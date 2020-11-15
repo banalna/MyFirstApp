@@ -9,28 +9,28 @@
 
     <ImageView
         android:id="@+id/bgImage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bg_image_height"
         android:contentDescription="@string/bg_description"
         android:scaleType="centerCrop"
-        android:src="@mipmap/ic_background_image"
+        android:src="@drawable/ic_background_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/back_btn"
+        android:id="@+id/back_button_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginStart="@dimen/back_button_margin_x1"
+        android:layout_marginTop="@dimen/back_button_margin_x3"
         android:alpha="0.5"
-        android:drawablePadding="8dp"
+        android:drawablePadding="@dimen/back_button_icon_padding"
         android:fontFamily="@font/roboto_light"
-        android:text="@string/back_btn"
+        android:text="@string/back_button_view"
         android:textColor="@color/textColor"
         app:drawableStartCompat="@drawable/ic_arrow"
-        app:layout_constraintBottom_toBottomOf="@id/guideHorizontal1_15"
+        app:layout_constraintBottom_toBottomOf="@id/top_horizontal_giudeline_10p"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,27 +40,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:background="@drawable/bg_rounded"
+        android:background="@drawable/bg_round_corner_gray_color"
         android:fontFamily="@font/roboto_black"
-        android:paddingStart="3dp"
-        android:paddingEnd="3dp"
-        android:paddingTop="3dp"
-        android:paddingBottom="7dp"
+        android:paddingStart="@dimen/pg_padding"
+        android:paddingEnd="@dimen/pg_padding"
+        android:paddingTop="@dimen/pg_padding"
+        android:paddingBottom="@dimen/pg_padding_bottom"
         android:text="@string/pg"
         android:textColor="@color/textColor"
-        android:textSize="12sp"
+        android:textSize="@dimen/pg_text_size"
         app:layout_constraintBottom_toTopOf="@+id/FilmTitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guideHorizontal1_3" />
+        app:layout_constraintTop_toTopOf="@+id/top_horizontal_giudeline_20p" />
 
 
     <TextView
         android:id="@+id/FilmTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
         android:fontFamily="@font/roboto_black"
         android:shadowColor="@color/black"
         android:shadowDx="6"
@@ -68,21 +68,21 @@
         android:shadowRadius="12"
         android:text="@string/film_name"
         android:textColor="@color/textColor"
-        android:textSize="40sp"
+        android:textSize="@dimen/film_title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pg" />
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideHorizontal1_3"
+        android:id="@+id/top_horizontal_giudeline_20p"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideHorizontal1_15"
+        android:id="@+id/top_horizontal_giudeline_10p"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -92,9 +92,9 @@
         android:id="@+id/janreText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
         android:text="@string/janre"
         android:textColor="@color/janreColor"
         app:layout_constraintEnd_toEndOf="parent"
@@ -105,9 +105,9 @@
         android:id="@+id/StarsReview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -168,9 +168,9 @@
         android:id="@+id/Storyline"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom_x3"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
         android:fontFamily="@font/roboto_black"
         android:shadowColor="@color/black"
         android:shadowDx="6"
@@ -178,7 +178,7 @@
         android:shadowRadius="10"
         android:text="@string/story_line"
         android:textColor="@color/textColor"
-        android:textSize="14sp"
+        android:textSize="@dimen/storyline_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/StarsReview" />
@@ -187,12 +187,12 @@
         android:id="@+id/about_film"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
         android:layout_marginTop="4dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
         android:fontFamily="@font/roboto_light"
-        android:paddingTop="5dp"
-        android:paddingBottom="5dp"
+        android:paddingTop="@dimen/about_film_padding"
+        android:paddingBottom="@dimen/about_film_padding"
         android:text="@string/about_film"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -204,14 +204,14 @@
         android:id="@+id/CastTxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom_x3"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
         android:fontFamily="@font/roboto_black"
         android:shadowColor="@color/black"
         android:text="@string/cast"
         android:textColor="@color/textColor"
-        android:textSize="14sp"
+        android:textSize="@dimen/cast_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/about_film" />
@@ -220,11 +220,11 @@
         android:id="@+id/photos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
         android:orientation="horizontal"
-        android:paddingBottom="20dp"
+        android:paddingBottom="@dimen/photos_padding_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/CastTxt"
@@ -244,7 +244,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/actor_photo"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_actor1" />
+                android:src="@drawable/ic_actor1" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -270,7 +270,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/actor_photo"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_actor2" />
+                android:src="@drawable/ic_actor2" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -296,7 +296,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/actor_photo"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_actor3" />
+                android:src="@drawable/ic_actor3" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -322,7 +322,7 @@
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/actor_photo"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/ic_actor4" />
+                android:src="@drawable/ic_actor4" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -334,6 +334,7 @@
         </LinearLayout>
 
     </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

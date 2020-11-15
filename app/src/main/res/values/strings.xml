@@ -11,7 +11,7 @@
     <string name="janre">Action, Adventure, Fantasy</string>
     <string name="film_name">Avengers: End Game</string>
     <string name="pg">13+</string>
-    <string name="back_btn">Back</string>
+    <string name="back_button_view">Back</string>
     <string name="bg_description">bg image Avengers</string>
     <string name="cast">Cast</string>
 
