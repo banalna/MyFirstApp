@@ -113,45 +113,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/janreText">
 
-        <ImageView
+        <RatingBar
+            android:id="@+id/ratingbar"
+            android:theme="@style/CustomColorRatingBar"
+            style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginEnd="3.25dp"
-            android:contentDescription="@string/star_description"
-            android:src="@drawable/ic_star_icon" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="3.25dp"
-            android:contentDescription="@string/star_description"
-            android:src="@drawable/ic_star_icon" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="3.25dp"
-            android:contentDescription="@string/star_description"
-            android:src="@drawable/ic_star_icon" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="3.25dp"
-            android:contentDescription="@string/star_description"
-            android:src="@drawable/ic_star_icon" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="3.25dp"
-            android:contentDescription="@string/star_description"
-            android:src="@drawable/ic_star_icon_off_" />
+            android:numStars="5"
+            android:rating="4"/>
 
         <TextView
             android:id="@+id/reviewText"
