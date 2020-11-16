@@ -25,7 +25,7 @@
         android:layout_marginStart="@dimen/back_button_margin_x1"
         android:layout_marginTop="@dimen/back_button_margin_x3"
         android:alpha="0.5"
-        android:drawablePadding="@dimen/back_button_icon_padding"
+        android:drawablePadding="@dimen/actor_margin"
         android:fontFamily="@font/roboto_light"
         android:text="@string/back_button_view"
         android:textColor="@color/textColor"
@@ -43,8 +43,8 @@
         android:background="@drawable/bg_round_corner_gray_color"
         android:fontFamily="@font/roboto_black"
         android:paddingStart="@dimen/pg_padding"
-        android:paddingEnd="@dimen/pg_padding"
         android:paddingTop="@dimen/pg_padding"
+        android:paddingEnd="@dimen/pg_padding"
         android:paddingBottom="@dimen/pg_padding_bottom"
         android:text="@string/pg"
         android:textColor="@color/textColor"
@@ -88,6 +88,7 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.10" />
 
+
     <TextView
         android:id="@+id/janreText"
         android:layout_width="match_parent"
@@ -101,38 +102,51 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/FilmTitle" />
 
-    <LinearLayout
-        android:id="@+id/StarsReview"
-        android:layout_width="match_parent"
+
+    <RatingBar
+        android:id="@+id/ratingbar"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/standard_layout_margin_start_end"
         android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
-        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:numStars="5"
+        android:padding="1.5dp"
+        android:rating="4"
+        android:theme="@style/CustomColorRatingBar"
+        app:layout_constraintRight_toLeftOf="@id/reviewText"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/janreText">
+        app:layout_constraintTop_toBottomOf="@id/janreText" />
 
-        <RatingBar
-            android:id="@+id/ratingbar"
-            android:theme="@style/CustomColorRatingBar"
-            style="?android:attr/ratingBarStyleSmall"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:numStars="5"
-            android:rating="4"/>
+<!--    <RatingBar-->
+<!--        android:id="@+id/ratingbar2"-->
+<!--        style="@style/CustomRatingBar"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/standard_layout_margin_start_end"-->
+<!--        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"-->
+<!--        android:numStars="5"-->
+<!--        android:padding="1.5dp"-->
+<!--        android:rating="4"-->
+<!--        android:theme="@style/CustomColorRatingBar"-->
+<!--        app:layout_constraintRight_toLeftOf="@id/reviewText"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/janreText" />-->
 
-        <TextView
-            android:id="@+id/reviewText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="5.64dp"
-            android:text="@string/reviews"
-            android:textColor="@color/reviewTextColor"
-            android:textSize="14sp" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/reviewText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/reviews"
+        android:textColor="@color/reviewTextColor"
+        android:textSize="@dimen/small_text_size"
+        app:layout_constraintBottom_toTopOf="@id/Storyline"
+        app:layout_constraintLeft_toRightOf="@id/ratingbar"
+        app:layout_constraintTop_toBottomOf="@id/janreText" />
 
     <TextView
         android:id="@+id/Storyline"
@@ -148,10 +162,10 @@
         android:shadowRadius="10"
         android:text="@string/story_line"
         android:textColor="@color/textColor"
-        android:textSize="@dimen/storyline_text_size"
+        android:textSize="@dimen/small_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StarsReview" />
+        app:layout_constraintTop_toBottomOf="@id/reviewText" />
 
     <TextView
         android:id="@+id/about_film"
@@ -181,130 +195,130 @@
         android:shadowColor="@color/black"
         android:text="@string/cast"
         android:textColor="@color/textColor"
-        android:textSize="@dimen/cast_text_size"
+        android:textSize="@dimen/small_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/about_film" />
 
-    <LinearLayout
-        android:id="@+id/photos"
-        android:layout_width="match_parent"
+
+    <ImageView
+        android:id="@+id/image_actor1"
+        android:layout_width="@dimen/actor_image_width"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
+        android:layout_marginEnd="@dimen/actor_margin"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/actor_photo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_actor1"
+
+        app:layout_constraintBottom_toTopOf="@+id/actor_name1"
+        app:layout_constraintEnd_toStartOf="@+id/actor_name2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/CastTxt" />
+
+
+    <ImageView
+        android:id="@+id/image_actor2"
+        android:layout_width="@dimen/actor_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
+        android:layout_marginEnd="@dimen/actor_margin"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/actor_photo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_actor2"
+        app:layout_constraintBottom_toTopOf="@+id/actor_name2"
+        app:layout_constraintEnd_toStartOf="@+id/actor_name3"
+        app:layout_constraintStart_toEndOf="@+id/actor_name1"
+        app:layout_constraintTop_toBottomOf="@id/CastTxt" />
+
+    <ImageView
+        android:id="@+id/image_actor3"
+        android:layout_width="@dimen/actor_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
+        android:layout_marginEnd="@dimen/actor_margin"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/actor_photo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_actor3"
+        app:layout_constraintBottom_toTopOf="@+id/actor_name3"
+        app:layout_constraintEnd_toStartOf="@+id/actor_name4"
+        app:layout_constraintStart_toEndOf="@+id/actor_name2"
+        app:layout_constraintTop_toBottomOf="@id/CastTxt" />
+
+    <ImageView
+        android:id="@+id/image_actor4"
+        android:layout_width="@dimen/actor_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="@dimen/standard_layout_margin_top_bottom"
         android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
-        android:orientation="horizontal"
-        android:paddingBottom="@dimen/photos_padding_bottom"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/actor_photo"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_actor4"
+        app:layout_constraintBottom_toTopOf="@+id/actor_name4"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/actor_name3"
+        app:layout_constraintTop_toBottomOf="@id/CastTxt" />
+
+
+    <TextView
+        android:id="@+id/actor_name1"
+        android:layout_width="@dimen/actor_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/standard_layout_margin_start_end"
+        android:layout_marginEnd="@dimen/actor_margin"
+        android:fontFamily="@font/roboto_black"
+        android:paddingTop="@dimen/actor_name_padding"
+        android:text="@string/actor1"
+        android:textColor="@color/actorTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/actor_name2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/CastTxt"
-        android:baselineAligned="false">
+        app:layout_constraintTop_toBottomOf="@id/image_actor1" />
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp">
+    <TextView
+        android:id="@+id/actor_name2"
+        android:layout_width="@dimen/actor_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/actor_margin"
+        android:fontFamily="@font/roboto_black"
+        android:paddingTop="@dimen/actor_name_padding"
+        android:text="@string/actor2"
+        android:textColor="@color/actorTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/actor_name3"
+        app:layout_constraintStart_toEndOf="@+id/actor_name1"
+        app:layout_constraintTop_toBottomOf="@id/image_actor2" />
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/actor_photo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_actor1" />
+    <TextView
+        android:id="@+id/actor_name3"
+        android:layout_width="@dimen/actor_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/actor_margin"
+        android:fontFamily="@font/roboto_black"
+        android:paddingTop="@dimen/actor_name_padding"
+        android:text="@string/actor3"
+        android:textColor="@color/actorTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/actor_name4"
+        app:layout_constraintStart_toEndOf="@+id/actor_name2"
+        app:layout_constraintTop_toBottomOf="@id/image_actor3" />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/roboto_black"
-                android:paddingTop="6dp"
-                android:text="@string/actor1"
-                android:textColor="@color/actorTextColor" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/actor_photo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_actor2" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/roboto_black"
-                android:paddingTop="6dp"
-                android:text="@string/actor2"
-                android:textColor="@color/actorTextColor" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/actor_photo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_actor3" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/roboto_black"
-                android:paddingTop="6dp"
-                android:text="@string/actor3"
-                android:textColor="@color/actorTextColor" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:adjustViewBounds="true"
-                android:contentDescription="@string/actor_photo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_actor4" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:fontFamily="@font/roboto_black"
-                android:paddingTop="6dp"
-                android:text="@string/actor4"
-                android:textColor="@color/actorTextColor" />
-        </LinearLayout>
-
-    </LinearLayout>
-
-
+    <TextView
+        android:id="@+id/actor_name4"
+        android:layout_width="@dimen/actor_image_width"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/standard_layout_margin_start_end"
+        android:fontFamily="@font/roboto_black"
+        android:paddingTop="@dimen/actor_name_padding"
+        android:text="@string/actor4"
+        android:textColor="@color/actorTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/actor_name3"
+        app:layout_constraintTop_toBottomOf="@id/image_actor4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
